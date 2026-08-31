@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Online Test Portal</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #978d4d; /* soft yellow background */
+  }
+
+  .content {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 60px 80px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255, 200, 50, 0.5);
+    backdrop-filter: blur(10px);
+  }
+
+  h2 {
+    font-size: 4em;
+    color: #333;
+    margin-bottom: 40px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .btn-3d {
+    background: linear-gradient(to bottom, #ff3300, #ffcc00);
+    border: none;
+    padding: 18px 50px;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 0 #cc5200, 0 15px 20px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-3d:hover { transform: scale(1.05); }
+  .btn-3d:active {
+    box-shadow: 0 5px 0 #cc5200, 0 10px 15px rgba(0,0,0,0.3);
+    transform: translateY(5px);
+  }
+</style>
+</head>
+<body>
+
+<div class="content">
+  <div class="container">
+    <h2>Click Here! To Start the Test</h2>
+    <button class="btn-3d" onclick="startTest()">Start Test</button>
+  </div>
+</div>
+
+<script>
+function startTest() {
+  fetch("http://127.0.0.1:3000/start-test")
+    .then(res => res.json())
+    .then(data => {
+      console.log(data.status);
+      window.location.href = "http://127.0.0.1:3000/question";
+    });
+}
+</script>
+
+</body>
+</html>

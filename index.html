@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      background: #978d4d; /* dark background */
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3); /* subtle overlay */
+    }
+
+    h1 {
+      font-size: 5em;
+      color: #ffcc00;
+      text-shadow: 2px 2px 15px rgba(255, 200, 50, 0.9);
+      margin-bottom: 50px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .btn-3d {
+      background: linear-gradient(to bottom, #ffcc00, #ff6600);
+      border: none;
+      padding: 20px 50px;
+      font-size: 1.6em;
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 0 #cc5200, 0 20px 25px rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-3d:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-3d:active {
+      box-shadow: 0 5px 0 #cc5200, 0 10px 15px rgba(0,0,0,0.3);
+      transform: translateY(5px);
+    }
+  </style>
+</head>
+<body>
+
+<div class="content">
+  <h1>Welcome to Online Test</h1>
+  <button class="btn-3d" onclick="window.location.href='ho.html'">Go to Test</button>
+</div>
+
+</body>
+</html>
